@@ -15,12 +15,14 @@ def calculate_polynomial(n: int, x: int, xi_list: list) -> int:
     展开式的计算结果
 
     """
-
+    result = 1
+    for xi in xi_list:
+        result *= (x-xi)
         
     return result
 
 if __name__ == "__main__":
-    n = int(input())
-    x = int(input())
+    n = int(input('n='))
+    x = int(input('x='))
     xi_list = list(map(int, input().split()))
     print(calculate_polynomial(n, x, xi_list))
